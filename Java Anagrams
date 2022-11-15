@@ -1,0 +1,71 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        
+        Scanner sc = new Scanner(System.in);
+        String a = sc.nextLine();
+        String b = sc.nextLine();
+        isAnagram(a,b);
+    }
+    public static void isAnagram(String a,String b)
+    {
+        
+        int x = 0;
+        int y =0;
+        int z = 0;
+        if (a.length()==b.length())
+        {
+           for(int i =0;i<a.length();i++)
+        {
+            a.charAt(i);
+            for(int m =0;m<a.length();m++)
+            {
+                if(Character.toUpperCase(a.charAt(i))== Character.toUpperCase(a.charAt(m)))
+                {
+                    x++;
+                }
+            }
+        }
+        for(int i =0;i<b.length();i++)
+        {
+            a.charAt(i);
+            for(int m =0;m<b.length();m++)
+            {
+                if(Character.toUpperCase(b.charAt(i))== Character.toUpperCase(b.charAt(m)))
+                {
+                    z++;
+                }
+            }
+        }
+        for(int i =0;i<b.length();i++)
+        {
+            a.charAt(i);
+            for(int m =0;m<a.length();m++)
+            {
+                if(Character.toUpperCase(b.charAt(i))== Character.toUpperCase(a.charAt(m)))
+                {
+                    y++;
+                }
+            }
+        }
+        if(x==y&&y==z)
+        {
+            System.out.println("Anagrams");
+        }
+        else
+        {
+            System.out.println("Not Anagrams");
+        } 
+        }
+        else
+        {
+            System.out.println("Not Anagrams");
+        }
+        //System.out.println(x);
+        
+    }
+}
