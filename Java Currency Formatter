@@ -1,0 +1,125 @@
+import java.lang.Object;
+
+import java.io.*;
+import java.util.*;
+import java.text.Format;
+import java.text.NumberFormat;
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        
+       
+        
+       
+        Scanner sc = new Scanner(System.in);
+        Double a = sc.nextDouble();
+        
+       
+        America(a);
+        India(a);
+        China(a);
+        France(a);
+    }
+     public static void America(Double a)
+        {
+            
+            NumberFormat nF = NumberFormat.getCurrencyInstance();
+       
+            nF.setCurrency(Currency.getInstance(Locale.US));
+           
+            System.out.println("US:"+" "+nF.format(a));
+        }
+        public static void India(Double a)
+        {
+          NumberFormat nF = NumberFormat.getCurrencyInstance();
+       
+            nF.setCurrency(Currency.getInstance(Locale.CHINA));
+            String aa = nF.format(a);
+            String ab = "";
+           
+            for(int i=3;i<=(aa.length()-1);i++)
+            {
+                char c = aa.charAt(i);
+                ab = ab + Character.toString(c);
+                
+                
+            }
+            
+            System.out.println("India: Rs."+ab);
+        }
+        public static void China(Double a)
+        {
+            
+            NumberFormat nF = NumberFormat.getCurrencyInstance();
+       
+            nF.setCurrency(Currency.getInstance(Locale.CHINA));
+            String aa = nF.format(a);
+            String ab = "";
+           
+            for(int i=2;i<=(aa.length()-1);i++)
+            {
+                char c = aa.charAt(i);
+                ab = ab + Character.toString(c);
+                
+                
+            }
+            
+            
+           
+            System.out.println("China:"+" "+ab);
+        }
+        public static void France(Double a)
+        {
+            
+            NumberFormat nF = NumberFormat.getCurrencyInstance();
+       
+            nF.setCurrency(Currency.getInstance(Locale.FRANCE));
+            String aa = nF.format(a);
+            String aabb= "";
+            String ab = "";
+           
+            for(int i=0;i<=(aa.length()-1);i++)
+            {
+                if(i==0)
+                {
+                  char as = aa.charAt(i);
+                   aabb = Character.toString(as); 
+                }
+                else{
+                    
+                 if(i!=3||i==7)
+                 {
+                  if(i==7)
+                   {  
+                       ab = ab+",";
+                   }
+                   else
+                   {
+                   char c = aa.charAt(i);
+                     ab = ab + Character.toString(c); 
+                   }  
+                 } 
+                 else
+                 {
+                  
+                    
+                    
+                        ab = ab+" ";
+                    
+                     
+                 }
+                  
+                }
+                
+                
+                
+            }
+            
+            
+           
+            System.out.println("France:"+" "+ab+" "+aabb);
+           
+           // System.out.println("France:"+" "+nF.format(a));
+        }
+}
